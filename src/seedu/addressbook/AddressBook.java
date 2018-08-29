@@ -136,6 +136,28 @@ public class AddressBook {
     private static final String DIVIDER = "===================================================";
 
 
+
+
+
+
+
+
+
+
+    private static final String COMMAND_COUNT_WORD = "count";
+    private static final String COMMAND_COUNT_DESC = "Counts the total number of people in the addressbook.";
+    private static final String COMMAND_COUNT_EXAMPLE = COMMAND_COUNT_WORD;
+
+
+
+
+
+
+
+
+
+
+
     /* We use a String array to store details of a single person.
      * The constants given below are the indexes for the different data elements of a person
      * used by the internal String[] storage format.
@@ -383,10 +405,14 @@ public class AddressBook {
             return getUsageInfoForAllCommands();
         case COMMAND_EXIT_WORD:
             executeExitProgramRequest();
+            case COMMAND_COUNT_WORD:
+                executeCountPerson(commandArgs);
         default:
             return getMessageForInvalidCommandInput(commandType, getUsageInfoForAllCommands());
         }
     }
+
+
 
     /**
      * Splits raw user input into command word and command arguments string
@@ -441,6 +467,23 @@ public class AddressBook {
         return String.format(MESSAGE_ADDED,
                 getNameFromPerson(addedPerson), getPhoneFromPerson(addedPerson), getEmailFromPerson(addedPerson));
     }
+
+
+
+
+
+
+
+    private static void executeCountPerson(ArrayList<String[]> persons) {
+        CountPerson(persons);
+    }
+
+
+
+
+
+
+
 
     /**
      * Finds and lists all persons in address book whose name contains any of the argument keywords.
@@ -649,6 +692,23 @@ public class AddressBook {
         }
         return messageAccumulator.toString();
     }
+
+
+
+
+
+    private static void CountPerson(ArrayList<String[]> persons) {
+        System.out.println(persons.size());
+    }
+
+
+
+
+
+
+
+
+
 
     /**
      * Constructs a prettified listing element message to represent a person and their data.
