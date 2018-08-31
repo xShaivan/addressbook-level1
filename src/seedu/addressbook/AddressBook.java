@@ -405,8 +405,8 @@ public class AddressBook {
             return getUsageInfoForAllCommands();
         case COMMAND_EXIT_WORD:
             executeExitProgramRequest();
-            case COMMAND_COUNT_WORD:
-                executeCountPerson(commandArgs);
+            //case COMMAND_COUNT_WORD:
+                //executeCountPerson(commandArgs);
         default:
             return getMessageForInvalidCommandInput(commandType, getUsageInfoForAllCommands());
         }
@@ -474,9 +474,9 @@ public class AddressBook {
 
 
 
-    private static void executeCountPerson(ArrayList<String[]> persons) {
+    /*private static void executeCountPerson(ArrayList<String[]> persons) {
         CountPerson(persons);
-    }
+    }*/
 
 
 
@@ -697,9 +697,9 @@ public class AddressBook {
 
 
 
-    private static void CountPerson(ArrayList<String[]> persons) {
+    /*private static void CountPerson(ArrayList<String[]> persons) {
         System.out.println(persons.size());
-    }
+    }*/
 
 
 
